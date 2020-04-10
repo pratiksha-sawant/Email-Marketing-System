@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MovieLens Email Marketing & Analytics System</title>
+	<!--<link rel="stylesheet" href="{{url_for('static', filename='main/styles.css')}}">-->
+</head>
+<body> <!--background="{{url_for('static', filename='main/images/img.jpg')}}"-->
+	<div class = "content" id="content">
+		<p><b><font size="5">Hi there!</font></b></p>
+		<p><b><font size="5">We have some recommendations based on your recent activity</font></b></p>
+		<p><b><font size="5">Have a look!</font></b></p>
+		<ul>
+		{% for l in myList %}
+		<li><b><font size="5">{{l}}</font></b></li>
+		{% endfor %}
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MovieLens Email Marketing & Analytics System</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='main/styles.css')}}">
+</head>
+<body>
+	<div class = "menubar" id="menubar">
+		<ul>
+		  <li><a href="about" href = "#about">About Us</a></li>
+		  <li><a href="marketing" href="#marketing">Marketing</a></li>
+		  <li><a href="analytics" href="#analytics">Analytics</a></li>
+		  <li style="float:right"><a href="{{ url_for('index')}}">Home</a></li>
+		</ul>
+	</div>
+	<div class = "imagebar" id="imagebar">	
+	</div>
+	<div class = "content" id="content">	
+	</div>
+</body>
+</html>

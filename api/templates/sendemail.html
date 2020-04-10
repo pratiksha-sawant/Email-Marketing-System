@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MovieLens Email Marketing & Analytics System</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='main/styles.css')}}">
+</head>
+<script>
+	function myFunction()
+	{
+		window.open("https://app.mailgun.com/app/dashboard","theFrame");
+	}
+</script>
+<body>
+	<div class = "menubar" id="menubar">
+		<ul>
+		  <li><a href="about" href = "{{ url_for('about')}}">About Us</a></li>
+		  <li><a href="marketing" href="{{ url_for('marketing')}}">Marketing</a></li>
+		  <li><a href="analytics" href="{{ url_for('analytics')}}">Analytics</a></li>
+		  <li style="float:right"><a href="{{ url_for('index')}}">Home</a></li>
+		</ul>
+	</div>
+	<p></p>
+	<div class = "content" id="content">
+	<br><br>	
+	<input type="button" value="Email Analytics" onclick="myFunction()"></input>
+	<br><br>
+	<iframe name="theFrame" width="1680" height="900"></iframe>
+	</div>
+</body>
+</html>

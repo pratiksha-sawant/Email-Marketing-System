@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MovieLens Email Marketing & Analytics System</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='main/styles.css')}}">
+</head>
+<body>
+	<script>
+		function validate()
+		{
+			var d = document.forms["myForm1"]["userids"].value;
+			if (d == "Select")
+			{
+				alert("Select correct value");
+				return false;
+			}
+			
+		}
+	</script>
+	<div class = "menubar" id="menubar">
+		<ul>
+		  <li><a href="about" href = "{{ url_for('about')}}">About Us</a></li>
+		  <li><a href="marketing" href="{{ url_for('marketing')}}">Marketing</a></li>
+		  <li><a href="analytics" href="{{ url_for('analytics')}}">Analytics</a></li>
+		  <li style="float:right"><a href="{{ url_for('index')}}">Home</a></li>
+		</ul>
+	</div>
+	
+	<div class = "content" id="content">
+		<div class ="getContent" id = "getContent">
+		<form action="/result" name = "myForm1" onsubmit="return validate()" method = "post">
+			{% if methods == 'GET' %}
+				<p class = "webPageText"> Select User Id :</p>
+				<select name="userids" id ="userids" class="userids">
+				<option value="Select" selected>Select</option>
+				{% for key, values in mydict.items() %}
+				<option value={{key}}>{{key}}</option>
+				{% endfor %}
+				</select>
+				<br><br>
+				<input type="submit" value="Submit" name= "submitUserId" id = "submitUserId">	
+			{% endif %}
+		</form>	
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MovieLens Email Marketing & Analytics System</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='main/styles.css')}}">
+</head>
+<body>
+	<div class = "menubar" id="menubar">
+		<ul>
+		  <li><a href="about" href = "{{ url_for('about')}}">About Us</a></li>
+		  <li><a href="marketing" href="{{ url_for('marketing')}}">Marketing</a></li>
+		  <li><a href="analytics" href="{{ url_for('analytics')}}">Analytics</a></li>
+		  <li style="float:right"><a href="{{ url_for('index')}}">Home</a></li>
+		</ul>
+	</div>
+	<div class = "content" id="content">
+	   <p></p>
+		<center><div align="center" class="imgtag" id="imgtag">
+			
+		</div></center>
+		<p class="desc" align="justify">
+		MovieLens is run by GroupLens, a research lab at the University of Minnesota.
+		It is non-commercial, site which helps you find movies you will like.
+		They rate movies to build a custom taste profile,then recommends other movies for you to watch.
+		Our objective is to offer a web application which will let marketing team carry out email-marketing campaigns and perform analytics through interactive dashboards.
+		We present you our email marketing and analytics system which recommends movies to our users by using Azure Machine Learning Service.
+		The recommendations are shared on emails from a third party domain Mailgun which tracks all the emails and gives statistics behind every delivered and undelivered email.
+		We also provide analytics behind the change in user activities after sending recommendations
+		</p>
+		<p></p>
+		<p class="members">By Team 2</p>
+		<p></p>
+		<p class="members">Creators:</p>
+		<p class="members">Member 1: Jayesh Patil</p>
+		<p></p>
+		<p class="members">Member 2: Pratiksha Sawant</p>
+		<p></p>
+		<p class="members">Member 3: Sharvari Karnik</p>
+		
+	</div>
+</body>
+</html>

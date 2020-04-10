@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MovieLens Email Marketing & Analytics System</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='main/styles.css')}}">
+</head>
+<body>
+	<script>
+	</script>
+	<div class = "menubar" id="menubar">
+		<ul>
+		  <li><a href="about" href = "{{ url_for('about')}}">About Us</a></li>
+		  <li><a href="marketing" href="{{ url_for('marketing')}}">Marketing</a></li>
+		  <li><a href="analytics" href="{{ url_for('analytics')}}">Analytics</a></li>
+		  <li style="float:right"><a href="{{ url_for('index')}}">Home</a></li>
+		</ul>
+	</div>
+	
+	<div class = "content" id="content">
+		<div class ="getContent" id = "getContent">
+		<form action="/recommendations" method = "post" name = "myForm2">
+			{% if methods == 'POST' %}
+				<p class = "webPageText">User Id:</p>
+				<input type = "number" name = "userid" id = "userid" value={{userNum}} readonly>
+				<p class = "webPageText">First Name :</p>
+				{% for f in frstnames %}
+					{% for key, values in f.items() %}
+						{% if key==userNum %}
+							<input type = "text" name = "firstname" id = "frst" value={{values}} readonly>
+						{%endif%}
+					{%endfor%}
+				{%endfor%}
+				<p class = "webPageText">Last Name :</p>
+				{% for l in lastnames %}
+					{% for key, values in l.items() %}
+						{% if key==userNum %}
+							<input type = "text" name = "lastname" id = "lst" value={{values}} readonly>
+						{%endif%}
+					{%endfor%}
+				{%endfor%}
+				<p class = "webPageText">Email :</p>
+				{% for e in emails %}
+					{% for key, values in e.items() %}
+						{% if key==userNum %}
+							<input type = "text" name = "email" id = "eml" value={{values}} readonly>
+						{%endif%}
+					{%endfor%}
+				{%endfor%}
+				<br>
+				<input type="submit" value="Recommend">	
+			{% endif%}
+		</form>	
+		</div>
+	</div>
+</body>
+</html>
